@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Git/Github</title>
+</head>
+<body>
+    <table>
+        <tbody>
+           <tr>
+              <td>
+                 <h1 class="h1">Git/Github</h1>
+                 <h3 class="h3">1. Git configuration</h3>
+                 <ul class="points">
+                    <li><strong>Git config</strong><br>
+                       Get and set configuration variables that control all facets of how Git looks and operates.<br>
+                       <strong>Set the name:</strong><br>
+                       $ git config --global user.name "User name"<br>
+                       <strong>Set the email:</strong><br>
+                       $ git config --global user.email "himanshudubey481@gmail.com"<br>
+                       <strong>Set the default editor:</strong><br>
+                       $ git config --global core.editor Vim<br>
+                       <strong>Check the setting:</strong><br>
+                       $ git config -list
+                    </li>
+                    <li><strong>Git alias</strong><br>
+                       <strong>Set up an alias</strong> for each command:<br>
+                       $ git config --global alias.co checkout<br>
+                       $ git config --global alias.br branch<br>
+                       $ git config --global alias.ci commit<br>
+                       $ git config --global alias.st status
+                    </li>
+                 </ul>
+                 <h3 class="h3">2. Starting a project</h3>
+                 <ul class="points">
+                    <li>
+                       <strong>Git init</strong><br>
+                       <strong>Create a local repository:</strong><br>
+                       $ git init 
+                       <repo name=""></repo>
+                    </li>
+                    <li>
+                       <strong>Git clone</strong><br>
+                       <strong>Make a local copy</strong> of the server repository.<br>
+                       $ git clone 
+                       <remote url=""></remote>
+                    </li>
+                 </ul>
+                 <h3 class="h3">3. Local changes</h3>
+                 <ul class="points">
+                    <li><strong>Git add</strong><br>
+                       <strong>Add a file</strong> to staging (Index) area:<br>
+                       $ git add Filename<br>
+                       <strong>Add all files</strong> of a repo to staging (Index) area:<br>
+                       $ git add*
+                    </li>
+                    <li><strong>Git commit</strong><br>
+                       <strong>Record</strong> or snapshots the file permanently in the version history <strong>with a message</strong>.<br>
+                       $ git commit -m " Commit Message"
+                    </li>
+                 </ul>
+                 <h3 class="h3">4. Track changes</h3>
+                 <ul class="points">
+                    <li>
+                       <strong>Git diff</strong><br>
+                       Track the changes that have not been staged: $ git diff<br>
+                       Track the changes that have staged but not committed:<br>
+                       $ git diff --staged<br>
+                       Track the changes after committing a file:<br>
+                       $ git diff HEAD<br>
+                       Track the changes between two commits:<br>
+                       $ git diff 
+                       <commit1-sha>
+                          <commit2-sha>
+                             Git Diff Branches:<br>
+                             $ git diff 
+                             <branch 1=""> &lt; branch 2&gt;</branch>
+                          </commit2-sha>
+                       </commit1-sha>
+                    </li>
+                    <li><strong>Git status</strong><br>
+                       Display the state of the working directory and the staging area.<br>
+                       $ git status
+                    </li>
+                    <li>
+                       <strong>Git show Shows objects:</strong><br>
+                       $ git show 
+                       <options>
+                          <objects></objects>
+                       </options>
+                    </li>
+                 </ul>
+                 <h3 class="h3">5. Commit History</h3>
+                 <ul class="points">
+                    <li><strong>Git log</strong><br>
+                       Display the most recent commits and the status of the head:<br>
+                       $ git log<br>
+                       Display the output as one commit per line:<br>
+                       $ git log -oneline<br>
+                       Displays the files that have been modified:<br>
+                       $ git log -stat<br>
+                       Display the modified files with location:<br>
+                       $ git log -p
+                    </li>
+                    <li><strong>Git blame</strong><br>
+                       Display the modification on each line of a file:<br>
+                       $ git blame &lt;file name&gt;
+                    </li>
+                 </ul>
+                 <h3 class="h3">6. Ignoring files</h3>
+                 <ul class="points">
+                    <li><strong>.gitignore</strong><br>
+                       Specify intentionally untracked files that Git should ignore. Create .gitignore:<br>
+                       $ touch .gitignore List the ignored files:<br>
+                       $ git ls-files -i --exclude-standard
+                    </li>
+                 </ul>
+                 <h3 class="h3">7. Branching</h3>
+                 <ul class="points">
+                    <li>
+                       <strong>Git branch Create branch:</strong><br>
+                       $ git branch 
+                       <branch name="">
+                          List Branch:<br>
+                          $ git branch --list Delete a Branch:<br>
+                          $ git branch -d
+                          <branch name="">
+                             Delete a remote Branch:<br>
+                             $ git push origin -delete 
+                             <branch name="">
+                                Rename Branch:<br>
+                                $ git branch -m 
+                                <old branch="" name="">
+                                   <new branch="" name=""></new>
+                                </old>
+                             </branch>
+                          </branch>
+                       </branch>
+                    </li>
+                    <li>
+                       <strong>Git checkout</strong><br>
+                       Switch between branches in a repository.<br>
+                       Switch to a particular branch:<br>
+                       $ git checkout 
+                       <branchname>
+                          <br>
+                          Create a new branch and switch to it: <br>
+                          $ git checkout -b 
+                          <branchname>
+                             Checkout a Remote branch:<br>
+                             $ git checkout 
+                             <remotebranch></remotebranch>
+                          </branchname>
+                       </branchname>
+                    </li>
+                    <li>
+                       <strong>Git stash</strong><br>
+                       Switch branches without committing the current branch. Stash current work:<br>
+                       $ git stash<br>
+                       Saving stashes with a message:<br>
+                       $ git stash save "
+                       <stashing message="">
+                          "<br>
+                          Check the stored stashes:<br>
+                          $ git stash list<br>
+                          Re-apply the changes that you just stashed:<br>
+                          $ git stash apply<br>
+                          Track the stashes and their changes:<br>
+                          $ git stash show<br>
+                          Re-apply the previous commits:<br>
+                          $ git stash pop<br>
+                          Delete a most recent stash from the queue:<br>
+                          $ git stash drop<br>
+                          Delete all the available stashes at once:<br>
+                          $ git stash clear<br>
+                          Stash work on a separate branch:<br>
+                          $ git stash branch 
+                          <branch name=""></branch>
+                       </stashing>
+                    </li>
+                    <li>
+                       <strong>Git cherry pic</strong><br>
+                       Apply the changes introduced by some existing commit:<br>
+                       $ git cherry-pick 
+                       <commit id=""></commit>
+                    </li>
+                 </ul>
+                 <h3 class="h3">8. Merging</h3>
+                 <ul class="points">
+                    <li>
+                       <strong>Git merge</strong><br>
+                       Merge the branches:<br>
+                       $ git merge 
+                       <branch name="">
+                          <br>
+                          Merge the specified commit to currently active branch:<br>
+                          $ git merge 
+                          <commit></commit>
+                       </branch>
+                    </li>
+                    <li>
+                       <strong>Git rebase</strong><br>
+                       Apply a sequence of commits from distinct branches into a final commit.<br>
+                       $ git rebase 
+                       <branch name=""><br>
+                          Continue the rebasing process:<br>
+                          $ git rebase -continue Abort the rebasing process:<br>
+                          $ git rebase --skip
+                       </branch>
+                    </li>
+                    <li><strong>Git interactive rebase</strong><br>
+                       Allow various operations like edit, rewrite, reorder, and more on existing commits.<br>
+                       $ git rebase -i
+                    </li>
+                 </ul>
+                 <h3 class="h3">9. Remote</h3>
+                 <ul class="points">
+                    <li>
+                       <strong>Git remote</strong><br>
+                       Check the configuration of the remote server:<br>
+                       $ git remote -v<br>
+                       Add a remote for the repository:<br>
+                       $ git remote add 
+                       <short name="">
+                          <remote url="">
+                             Fetch the data from the remote server:<br>
+                             $ git fetch 
+                             <remote>
+                                <br>
+                                Remove a remote connection from the repository:<br>
+                                $ git remote rm 
+                                <destination>
+                                   <br>
+                                   Rename remote server:<br>
+                                   $ git remote rename 
+                                   <old name="">
+                                      <new name="">
+                                         <br>
+                                         Show additional information about a particular remote:<br>
+                                         $ git remote show 
+                                         <remote>
+                                            <br>
+                                            Change remote:<br>
+                                            $ git remote set-url 
+                                            <remote name="">
+                                               <newurl></newurl>
+                                            </remote>
+                                         </remote>
+                                      </new>
+                                   </old>
+                                </destination>
+                             </remote>
+                          </remote>
+                       </short>
+                    </li>
+                    <li><strong>Git origin master</strong><br>
+                       Push data to the remote server: <br>
+                       $ git push origin master Pull data from remote server:<br>
+                       $ git pull origin master
+                    </li>
+                 </ul>
+                 <h3 class="h3">10. Pushing Updates</h3>
+                 <ul class="points">
+                    <li>
+                       <strong>Git push</strong><br>
+                       Transfer the commits from your local repository to a remote server. Push data to the remote server:<br>
+                       $ git push origin master Force push data:<br>
+                       $ git push 
+                       <remote>
+                          <branch> -f<br>
+                             Delete a remote branch by push command:<br>
+                             $ git push origin -delete edited
+                          </branch>
+                       </remote>
+                    </li>
+                 </ul>
+                 <h3 class="h3">11. Pulling updates</h3>
+                 <ul class="points">
+                    <li>
+                       <strong>Git pull</strong><br>
+                       Pull the data from the server:<br>
+                       $ git pull origin master<br>
+                       Pull a remote branch:<br>
+                       $ git pull 
+                       <remote branch="" url=""></remote>
+                    </li>
+                    <li>
+                       <strong>Git fetch</strong><br>
+                       Download branches and tags from one or more repositories. Fetch the remote repository:<br>
+                       $ git fetch&lt; repository Url&gt; Fetch a specific branch:<br>
+                       $ git fetch 
+                       <branch url="">
+                          <branch name=""><br>
+                             Fetch all the branches simultaneously:<br>
+                             $ git fetch -all<br>
+                             Synchronize the local repository:<br>
+                             $ git fetch origin
+                          </branch>
+                       </branch>
+                    </li>
+                 </ul>
+                 <h3 class="h3">12. Undo changes</h3>
+                 <ul class="points">
+                    <li>
+                       <strong>Git revert</strong><br>
+                       Undo the changes:<br>
+                       $ git revert<br>
+                       Revert a particular commit:<br>
+                       $ git revert 
+                       <commit-ish></commit-ish>
+                    </li>
+                    <li><strong>Git reset</strong><br>
+                       Reset the changes:<br>
+                       $ git reset -hard<br>
+                       $ git reset -soft:<br>
+                       $ git reset --mixed
+                    </li>
+                 </ul>
+                 <h3 class="h3">13. Removing files</h3>
+                 <ul class="points">
+                    <li><strong>Git rm</strong><br>
+                       Remove the files from the working tree and from the index:<br>
+                       $ git rm &lt;file Name&gt;<br>
+                       Remove files from the Git But keep the files in your local repository:<br>
+                       $ git rm --cached
+                    </li>
+                 </ul>
+                 <br>
+                 <br>
+              </td>
+           </tr>
+        </tbody>
+     </table>
+</body>
+</html>
